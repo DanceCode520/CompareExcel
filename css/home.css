@@ -132,3 +132,12 @@ span {
   font-size: 32px;
   margin-bottom: 15px;
 }
+
+.selectZD {
+  display: inline-block;
+  background-color: #ff5722;
+  color: white;
+  padding: 6px 13px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
