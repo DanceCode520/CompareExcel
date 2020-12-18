@@ -1,0 +1,134 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  background: url("../imgs/bk1.jpg") no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+h1 {
+  text-align: center;
+  font-size: 60px;
+  padding-top: 10px;
+}
+
+.file {
+  position: relative;
+  display: inline-block;
+  background: #d0eeff;
+  border: 1px solid #99d3f5;
+  border-radius: 4px;
+  padding: 4px 12px;
+  overflow: hidden;
+  color: #1e88c7;
+  text-decoration: none;
+  text-indent: 0;
+  line-height: 20px;
+}
+.file input {
+  position: absolute;
+  font-size: 100px;
+  right: 0;
+  top: 0;
+  opacity: 0;
+}
+.file:hover {
+  background: #aadffd;
+  border-color: #78c3f3;
+  color: #004974;
+  text-decoration: none;
+}
+
+td {
+  text-align: center;
+  width: 95px;
+}
+
+th {
+  height: 35px;
+  width: 95px;
+}
+
+caption {
+  font-size: 20px;
+  margin-bottom: 5px;
+  font-weight: bolder;
+}
+
+.excel {
+  display: inline-block;
+  height: 795px;
+  overflow-y: auto;
+  overflow: auto;
+  overflow-x: auto;
+}
+
+.width50 {
+  width: 50%;
+}
+
+.width100 {
+  width: 100%;
+}
+
+.middle {
+  width: 40%;
+  float: left;
+}
+
+.width49 {
+  width: 49%;
+}
+
+.floatLf {
+  float: left;
+}
+
+.floatRg {
+  float: right;
+}
+
+.msg {
+  font-size: 17px;
+  margin-bottom: 15px;
+}
+
+span {
+  color: red;
+}
+
+.extitle {
+  color: white;
+  margin: 3px;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.extitle:hover {
+  background-color: #5fb878;
+}
+
+.nochecked {
+  background-color: gray;
+}
+
+.cheched {
+  background-color: #5fb878;
+}
+
+.pTitle {
+  height: 48px;
+  vertical-align: middle;
+  line-height: 48px;
+  font-weight: bold;
+  font-size: 32px;
+  margin-bottom: 15px;
+}

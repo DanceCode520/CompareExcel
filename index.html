@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/home.css" />
+    <script src="./js/frame.js"></script>
+    <script src="./framewordk/xlsx.core.min.js"></script>
+    <script src="./framewordk/vue.js"></script>
+    <script src="./framewordk/vue.min.js"></script>
+    <script src="./framewordk/xlsx.core.min.js"></script>
+    <script src="./framewordk/jquery.min.js"></script>
+    <script src="./framewordk/layui/layui.js"></script>
+    <link
+      rel="stylesheet"
+      href="./framewordk/layui/css/layui.css"
+      media="all"
+    />
+    <title>Excel对比</title>
+  </head>
+
+  <body>
+    <h1 style="margin-bottom: 10px">五中Excel数据对比系统</h1>
+    <div id="app">
+      <div class="middle">
+        <div style="width: 50%; float: left; text-align: center">
+          <p class="pTitle">原始数据列表</p>
+          <div class="excel floatLf" style="width: 99%; height: 730px">
+            <table border="1" v-show="showOldKeys.length!=0">
+              <tr>
+                <th v-for="key in showOldKeys">{{key}}</th>
+              </tr>
+              <tr v-for="stu in oldArr">
+                <td v-for="key in showOldKeys">{{stu[key]}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div style="width: 50%; float: left; text-align: center">
+          <p class="pTitle">对比数据列表</p>
+          <div class="excel width49" style="width: 99%; height: 730px">
+            <table border="1" v-show="showOldKeys.length!=0">
+              <tr>
+                <th v-for="key in showOldKeys">{{key}}</th>
+              </tr>
+              <tr v-for="stu in uploadArr">
+                <td v-for="key in showOldKeys">{{stu[key]}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div style="width: 20%; float: left; text-align: center">
+        <a href="javascript:;" class="file"
+          >上传原始数据表
+          <input type="file" name="" id="origin" />
+        </a>
+        <a href="javascript:;" class="file" style="color: red"
+          >上传对比数据表
+          <input type="file" name="" id="upload" />
+        </a>
+        <br /><br />
+        <button class="layui-btn layui-btn-radius" onclick="CompareExcel()">
+          对比数据
+        </button>
+        <div style="margin-top: 25px; overflow: hidden">
+          <p v-show="oldKeys.length!=0" style="font-size: 18px; margin-bottom: 8px">选择需要对比的字段</p>
+          <span
+            v-for="(key,i) in oldKeys"
+            :class="[showOldKeys.indexOf(key)!=-1 ? 'extitle cheched':'extitle nochecked']"
+            v-on:click="changeCheck"
+            >{{key}}</span
+          >
+        </div>
+      </div>
+      <div class="middle">
+        <div style="width: 50%; float: left; text-align: center">
+          <p class="msg" style="height: 48px">
+            原始表中共有<span>{{oldArr.length}}</span>条数据<br />其中<span>{{cmoldArr.length}}</span>条数据对比表中没有
+          </p>
+          <div class="excel floatLf" style="width: 99%; height: 730px">
+            <table border="1" v-show="cmoldArr.length!=0">
+              <tr>
+                <th v-for="key in showOldKeys">{{key}}</th>
+              </tr>
+              <tr v-for="stu in cmoldArr">
+                <td v-for="key in showOldKeys">{{stu[key]}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div style="width: 50%; float: left; text-align: center">
+          <p class="msg" style="height: 48px">
+            对比表中共有<span>{{uploadArr.length}}</span>条数据<br />其中<span>{{cmuploadArr.length}}</span>条数据原始表中没有
+          </p>
+          <div class="excel floatRg" style="width: 99%; height: 730px">
+            <table border="1" v-show="cmuploadArr.length!=0">
+              <tr>
+                <th v-for="key in showOldKeys">{{key}}</th>
+              </tr>
+              <tr v-for="stu in cmuploadArr">
+                <td v-for="key in showOldKeys">{{stu[key]}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/home.js"></script>
+  </body>
+</html>
