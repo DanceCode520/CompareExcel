@@ -79,6 +79,7 @@ $("#origin").change(function (e) {
   fileReader.readAsBinaryString(files[0]);
 });
 
+// 获取对比表中的数据信息
 $("#upload").change(function (e) {
   var files = e.target.files;
   var fileReader = new FileReader();
